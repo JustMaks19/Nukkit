@@ -136,6 +136,8 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
     protected String username;
     protected String iusername;
     protected String displayName;
+    
+    public Vector3 vector;
 
     protected int startAction = -1;
 
@@ -473,6 +475,10 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
 
     public Position getNextPosition() {
         return this.newPosition != null ? new Position(this.newPosition.x, this.newPosition.y, this.newPosition.z, this.level) : this.getPosition();
+    }
+    
+    public Vector3 getVector(){
+    	return new Vector3(this.x, this.y, this.z);
     }
 
     public boolean isSleeping() {
